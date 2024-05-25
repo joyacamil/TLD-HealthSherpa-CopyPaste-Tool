@@ -2,17 +2,17 @@
 const fieldsMapping = {
   "#contactInformation input[name='first_name']": "#main input[name='firstName']",
   "#contactInformation input[name='last_name']": "#main input[name=lastName']",
-  "#contactInformation input[name='phone']": "phoneNumber",
-  "#contactInformation input[name='address']": "streetAddress",
-  "#contactInformation input[name='city']": "city",
+  "#contactInformation input[name='phone']": ".col-xs-12 input[name='phoneNumber']",
+  "#contactInformation input[name='address']": ".col-xs-12 input[name='streetAddress']",
+  "#contactInformation input[name='city']": ".col-xs-12 input[name='city']",
   "#contactInformation select[name='state']": "#main input[name='coverageState']",
-  "#contactInformation input[name='zipcode']": "zipCode",
-  "#contactInformation input[name='email']" : "email",
+  "#contactInformation input[name='zipcode']": ".col-xs-12 input[name='zipCode']",
+  "#contactInformation input[name='email']" : ".col-xs-12 input[name='email']",
   "#contactInformation input[name='dob']": "#main input[name='dateOfBirth']",
  // "#contactInformation select[type='gender']" : "healthsherpaField10",
-  "#financialInformation input[name='occupation']": "job[employerName]",
-  "#financialInformation input[type='annual_income']": "job[amount]",
-  "#legalInformation input[name='ssn']": "primaryManagedPerson[ssn]",
+  "#financialInformation input[name='occupation']": ".col-xs-12 input[name='job[employerName]']",
+  "#financialInformation input[type='annual_income']": ".col-xs-12 input[name='job[amount]']",
+  "#legalInformation input[name='ssn']": ".col-xs-12 input[name='managedPeople[0][ssn]']",
   //"#legalInformation select[name='tax_filing_id']": "healthsherpaField14",
   //"#legalInformation select[name='legal_status_id']": "healthsherpaField15",
 };
@@ -51,16 +51,16 @@ function pasteDataToHealthsherpa() {
     for (let healthsherpaField in data) {
       const hsFirstName = "#main input[name='firstName']";
       const hsLastName = "#main input[name=lastName']";
-      const hsPhoneNumber = name="phoneNumber";
-      const hsStreetAddress = name="streetAddress";
-      const hsCity = name="city";
+      const hsPhoneNumber = ".col-xs-12 input[name='phoneNumber']";
+      const hsStreetAddress = ".col-xs-12 input[name='streetAddress']";
+      const hsCity = ".col-xs-12 input[name='city']";
       const hsCoverageState = "#main input[name='coverageState']";
-      const hsZipCode = name="zipCode";
-      const hsEmail = name="email";
+      const hsZipCode = ".col-xs-12 input[name='zipCode']";
+      const hsEmail = ".col-xs-12 input[name='email']";
       const hsDateOfBirth = "#main input[name='dateOfBirth']";
-      const hsEmployerName = name="job[employerName]";
-      const hsAmount = name="job[amount]";
-      const hsSSN = name="primaryManagedPerson[ssn]";
+      const hsEmployerName = "#main input[name='job[employerName]']";
+      const hsAmount = ".col-xs-12 input[name='job[amount]']";
+      const hsSSN = ".col-xs-12 input[name='managedPeople[0][ssn]']";
       if (element) {
         element.value = data[healthsherpaField];
       }
