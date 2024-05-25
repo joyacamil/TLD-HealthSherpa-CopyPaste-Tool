@@ -1,14 +1,14 @@
 // Define the fields to fetch and their corresponding fields to paste
 const fieldsMapping = {
-  "#contactInformation input[name='first_name']": "firstName",
-  "#contactInformation input[name='last_name']": "lastName",
+  "#contactInformation input[name='first_name']": "#main input[name='firstName']",
+  "#contactInformation input[name='last_name']": "#main input[name=lastName']",
   "#contactInformation input[name='phone']": "phoneNumber",
   "#contactInformation input[name='address']": "streetAddress",
   "#contactInformation input[name='city']": "city",
-  "#contactInformation select[name='state']": "coverageState",
+  "#contactInformation select[name='state']": "#main input[name='coverageState']",
   "#contactInformation input[name='zipcode']": "zipCode",
   "#contactInformation input[name='email']" : "email",
-  "#contactInformation input[name='dob']": "dateOfBirth",
+  "#contactInformation input[name='dob']": "#main input[name='dateOfBirth']",
  // "#contactInformation select[type='gender']" : "healthsherpaField10",
   "#financialInformation input[name='occupation']": "job[employerName]",
   "#financialInformation input[type='annual_income']": "job[amount]",
@@ -49,15 +49,15 @@ function pasteDataToHealthsherpa() {
   chrome.storage.local.get(['data'], (result) => {
     let data = result.data;
     for (let healthsherpaField in data) {
-      const hsFirstName = name="firstName";
-      const hsLastName = name="lastName";
+      const hsFirstName = "#main input[name='firstName']";
+      const hsLastName = "#main input[name=lastName']";
       const hsPhoneNumber = name="phoneNumber";
       const hsStreetAddress = name="streetAddress";
       const hsCity = name="city";
-      const hsCoverageState = name="coverageState";
+      const hsCoverageState = "#main input[name='coverageState']";
       const hsZipCode = name="zipCode";
       const hsEmail = name="email";
-      const hsDateOfBirth = name="dateOfBirth";
+      const hsDateOfBirth = "#main input[name='dateOfBirth']";
       const hsEmployerName = name="job[employerName]";
       const hsAmount = name="job[amount]";
       const hsSSN = name="primaryManagedPerson[ssn]";
